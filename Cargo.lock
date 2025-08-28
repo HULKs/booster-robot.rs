@@ -13,6 +13,7 @@ name = "booster-robot"
 version = "0.1.0"
 dependencies = [
  "booster-robot-sys",
+ "cxx",
 ]
 
 [[package]]

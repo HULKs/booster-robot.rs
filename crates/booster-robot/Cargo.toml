@@ -6,3 +6,4 @@ license.workspace = true
 
 [dependencies]
 booster-robot-sys.workspace = true
+cxx.workspace = true
