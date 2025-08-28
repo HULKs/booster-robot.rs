@@ -1,5 +1,7 @@
+pub use ffi::*;
+
 #[cxx::bridge]
-pub mod ffi {
+mod ffi {
     #[repr(i32)]
     pub enum RobotMode {
         /// For error handling

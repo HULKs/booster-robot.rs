@@ -1,7 +1,9 @@
 pub mod api_const;
 
+pub use ffi::*;
+
 #[cxx::bridge]
-pub mod ffi {
+mod ffi {
     #[repr(i32)]
     enum LocoApiId {
         kChangeMode = 2000,
@@ -24,8 +26,8 @@ pub mod ffi {
     unsafe extern "C++" {
         include!("wrapper.hpp");
 
-        type RobotMode = crate::robot::common::ffi::RobotMode;
-        type HandAction = crate::robot::b1::api_const::ffi::HandAction;
+        type RobotMode = crate::robot::common::RobotMode;
+        type HandAction = crate::robot::b1::api_const::HandAction;
 
         type B1LocoClient;
         type LocoApiId;
@@ -66,9 +68,10 @@ pub mod ffi {
 mod tests {
     use cxx::let_cxx_string;
 
-    use crate::robot::ffi::init_channel_factory;
-
-    use super::ffi::{LocoApiId, b1_loco_client_new};
+    use crate::robot::{
+        b1::{LocoApiId, b1_loco_client_new},
+        init_channel_factory,
+    };
 
     #[test]
     fn api_call() {

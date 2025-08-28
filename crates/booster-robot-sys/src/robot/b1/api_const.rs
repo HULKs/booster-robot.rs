@@ -8,8 +8,10 @@ pub const K_TOPIC_TF: &str = "rt/tf";
 pub const K_JOINT_CNT: usize = 23;
 pub const K_JOINT_CNT7_DOF_ARM: usize = 29;
 
+pub use ffi::*;
+
 #[cxx::bridge]
-pub mod ffi {
+mod ffi {
     #[repr(i32)]
     pub enum JointIndex {
         // head

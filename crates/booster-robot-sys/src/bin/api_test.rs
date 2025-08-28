@@ -1,8 +1,6 @@
 use cxx::let_cxx_string;
 
-use booster_robot_sys::robot::{
-    b1::ffi::b1_loco_client_new, common::ffi::RobotMode, ffi::init_channel_factory,
-};
+use booster_robot_sys::robot::{b1::b1_loco_client_new, common::RobotMode, init_channel_factory};
 
 fn main() {
     let_cxx_string!(network_interface = "127.0.0.1");

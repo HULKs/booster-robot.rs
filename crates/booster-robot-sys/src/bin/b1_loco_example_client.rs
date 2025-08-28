@@ -1,5 +1,6 @@
-use booster_robot_sys::robot::{b1::api_const::ffi::HandAction, common::ffi::RobotMode};
 use cxx::let_cxx_string;
+
+use booster_robot_sys::robot::{b1::api_const::HandAction, common::RobotMode};
 
 // void HandRock(booster::robot::b1::B1LocoClient &client) {
 //     std::vector<booster::robot::b1::DexterousFingerParameter> finger_params;
@@ -264,9 +265,9 @@ fn main() {
         .expect("Expected a network interface as CLI argument");
     let_cxx_string!(network_interface_cxx = network_interface);
 
-    booster_robot_sys::robot::ffi::init_channel_factory(&network_interface_cxx);
+    booster_robot_sys::robot::init_channel_factory(&network_interface_cxx);
 
-    let mut client = booster_robot_sys::robot::b1::ffi::b1_loco_client_new();
+    let mut client = booster_robot_sys::robot::b1::b1_loco_client_new();
     client.pin_mut().Init();
 
     let mut x = 0.0;

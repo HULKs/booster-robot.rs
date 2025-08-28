@@ -1,8 +1,10 @@
 pub mod b1;
 pub mod common;
 
+pub use ffi::*;
+
 #[cxx::bridge]
-pub mod ffi {
+mod ffi {
     unsafe extern "C++" {
         include!("wrapper.hpp");
 
