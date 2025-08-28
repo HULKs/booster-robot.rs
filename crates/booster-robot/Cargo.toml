@@ -1,0 +1,8 @@
+[package]
+name = "booster-robot"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+
+[dependencies]
+booster-robot-sys.workspace = true

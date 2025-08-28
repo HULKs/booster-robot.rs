@@ -1,0 +1,13 @@
+[workspace]
+members = ["crates/booster-robot-sys", "crates/booster-robot"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+license = "GPL-3.0-only"
+
+[workspace.dependencies]
+cxx = "1.0"
+cxx-build = "1.0"
+booster-robot-sys = { path = "crates/booster-robot-sys" }
